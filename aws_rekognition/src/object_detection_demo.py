@@ -1,6 +1,6 @@
 from storage_service import StorageService
 from recognition_service import RecognitionService
-
+import sys
 
 def main(bucket_name):
 
@@ -15,5 +15,5 @@ if __name__=="__main__":
 
     storage_service = StorageService()
     recogntion_service =  RecognitionService()
-    bucket_name = "aws-bucket-fun"
+    bucket_name = sys.argv[1]
     main(bucket_name)
