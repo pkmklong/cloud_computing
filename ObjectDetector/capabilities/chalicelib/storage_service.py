@@ -1,9 +1,9 @@
-import bobo3
+import boto3
 
 class StorageService:
-    def __init__(self, sotrage_location):
-        self.client = boot3.client("s3")
-        self.bucket_name = storage_locaiton
+    def __init__(self, storage_location):
+        self.client = boto3.client("s3")
+        self.bucket_name = storage_location
 
     def get_storage_location(self):
         return self.bucket_name
@@ -13,6 +13,8 @@ class StorageService:
 
         files = []
         for content in response["Contents"]:
-            files.append({"locaton": self.bucket_name,
-            "file_name": content["key"],  "url": "https://" + self.bucket_name + ".s3.amazonaws.com/" + content["key"]))
+            files.append({
+            "location": self.bucket_name,
+            "file_name": content["Key"], 
+            "url": "https://" + self.bucket_name + ".s3.amazonaws.com/" + content["Key"]})
         return files
