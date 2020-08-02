@@ -15,7 +15,7 @@ function runDemo() {
     imageElem.src = data.imageUrl;
     imageElem.alt = data.imageName;
 
-    let objectElem = document.getElementById("objects");
+    let objectsElem = document.getElementById("objects");
     let objects = data.objects;
     for (let i=0, i < objects.length; i++) {
     let labelElem = document.createElement("h6");
